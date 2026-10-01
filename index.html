@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Conheça a APA de Pompeia, seu trabalho de proteção animal e formas seguras de contribuir.">
+  <title>APA de Pompeia | Por eles, todos os dias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="APA de Pompeia, início">
+      <span class="brand-mark" aria-hidden="true">APA</span>
+      <span class="brand-name">APA <span>de Pompeia</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#apa">A APA</a>
+      <a href="#animais">Animais</a>
+      <a href="#transparencia">Transparência</a>
+      <a class="nav-donate" href="#doar">Doar <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2200&q=85" alt="Dois cães juntos ao ar livre, fotografia ilustrativa" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow hero-eyebrow">Proteção animal · Pompeia, SP</p>
+        <h1 id="hero-title">Por eles,<br><em>todos os dias.</em></h1>
+        <p class="hero-copy">Conheça a APA de Pompeia e encontre informações sobre sua história, missão e atuação.</p>
+        <a class="button button-light" href="#doar">Quero ajudar <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="photo-note">Fotografia ilustrativa</span>
+      <a class="scroll-cue" href="#apa" aria-label="Descer para conhecer a APA"><span></span></a>
+    </section>
+
+    <section class="intro section-wrap" id="apa" aria-labelledby="intro-title">
+      <div class="section-index reveal"><span>01</span><span class="index-line"></span><span>Quem somos</span></div>
+      <div class="intro-grid">
+        <h2 class="section-title reveal" id="intro-title">Cuidado que<br>faz <em>diferença.</em></h2>
+        <div class="intro-copy reveal">
+          <p class="lead">Um espaço dedicado à APA de Pompeia.</p>
+          <p>Esta página reunirá informações oficiais sobre a história, a missão e as atividades da associação, além de apresentar os animais e formas de contribuir.</p>
+          <a class="text-link" href="#transparencia">Veja os documentos <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="work-grid" aria-label="Frentes de atuação">
+        <article class="work-item reveal"><span class="work-number">01</span><span class="work-icon" aria-hidden="true">01</span><h3>Resgate e proteção</h3><p>Atuação em defesa dos animais.</p></article>
+        <article class="work-item reveal"><span class="work-number">02</span><span class="work-icon" aria-hidden="true">02</span><h3>Acolhimento</h3><p>Um lugar seguro para recomeçar.</p></article>
+        <article class="work-item reveal"><span class="work-number">03</span><span class="work-icon" aria-hidden="true">03</span><h3>Cuidado e recuperação</h3><p>Atenção e cuidado em cada etapa.</p></article>
+        <article class="work-item reveal"><span class="work-number">04</span><span class="work-icon" aria-hidden="true">04</span><h3>Adoção responsável</h3><p>Novos encontros, com responsabilidade.</p></article>
+      </div>
+      <p class="work-note">Estas frentes são uma proposta inicial e devem ser confirmadas pela APA antes da publicação.</p>
+    </section>
+
+    <section class="animals-section" id="animais" aria-labelledby="animals-title">
+      <div class="section-wrap animals-inner">
+        <div class="section-index reveal"><span>02</span><span class="index-line"></span><span>Conheça os animais</span></div>
+        <div class="section-heading-row reveal">
+          <div><h2 class="section-title" id="animals-title">Cada história<br>merece ser <em>vista.</em></h2></div>
+          <p class="section-aside">Veja alguns retratos enquanto a galeria oficial da APA é preparada.</p>
+        </div>
+        <div class="filter-row reveal" role="group" aria-label="Filtrar animais por espécie">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter-button" type="button" data-filter="dog" aria-pressed="false">Cães</button>
+          <button class="filter-button" type="button" data-filter="cat" aria-pressed="false">Gatos</button>
+        </div>
+        <p class="gallery-note">As fotos abaixo são ilustrativas, não representam animais atendidos pela APA.</p>
+        <div class="animal-grid" id="animal-grid">
+          <button class="animal-card reveal" type="button" data-kind="dog" data-title="Cães" data-image="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" aria-label="Ver imagem ilustrativa de cães">
+            <span class="animal-image-wrap"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85" alt="Cão em um campo, imagem ilustrativa" loading="lazy"><span class="image-label">Ilustrativa</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="animal-caption"><span><strong>Cães</strong><small>Retrato ilustrativo</small></span><span class="animal-count">01</span></span>
+          </button>
+          <button class="animal-card reveal" type="button" data-kind="cat" data-title="Gatos" data-image="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85" aria-label="Ver imagem ilustrativa de gatos">
+            <span class="animal-image-wrap"><img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1000&q=85" alt="Gato deitado, imagem ilustrativa" loading="lazy"><span class="image-label">Ilustrativa</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="animal-caption"><span><strong>Gatos</strong><small>Retrato ilustrativo</small></span><span class="animal-count">02</span></span>
+          </button>
+          <button class="animal-card reveal" type="button" data-kind="dog" data-title="Cães" data-image="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" aria-label="Ver outra imagem ilustrativa de cães">
+            <span class="animal-image-wrap"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85" alt="Retrato de um cão, imagem ilustrativa" loading="lazy"><span class="image-label">Ilustrativa</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+            <span class="animal-caption"><span><strong>Cães</strong><small>Retrato ilustrativo</small></span><span class="animal-count">03</span></span>
+          </button>
+        </div>
+        <p class="gallery-empty" id="gallery-empty" hidden>As informações e fotos oficiais serão publicadas após confirmação pela APA.</p>
+      </div>
+    </section>
+
+    <section class="transparency section-wrap" id="transparencia" aria-labelledby="transparency-title">
+      <div class="section-index reveal"><span>03</span><span class="index-line"></span><span>Transparência</span></div>
+      <div class="transparency-grid">
+        <div class="transparency-intro reveal">
+          <h2 class="section-title" id="transparency-title">Confiança também<br>se constrói com <em>clareza.</em></h2>
+          <p>Documentos e informações oficiais da associação ficarão reunidos nesta área.</p>
+          <span class="location-line"><span class="location-dot" aria-hidden="true"></span> Pompeia · São Paulo</span>
+        </div>
+        <div class="document-list reveal" id="document-list" aria-label="Documentos institucionais">
+          <div class="document-row"><span class="document-type">Institucional</span><span class="document-title">Estatuto da APA</span><span class="document-status">A publicar</span></div>
+          <div class="document-row"><span class="document-type">Cadastro</span><span class="document-title">CNPJ e dados institucionais</span><span class="document-status">A publicar</span></div>
+          <div class="document-row"><span class="document-type">Prestação de contas</span><span class="document-title">Exercício 2025</span><span class="document-status">A publicar</span></div>
+          <div class="document-row"><span class="document-type">Prestação de contas</span><span class="document-title">Exercício 2026</span><span class="document-status">A publicar</span></div>
+          <div class="document-row"><span class="document-type">Projetos</span><span class="document-title">Relatórios e projetos</span><span class="document-status">A publicar</span></div>
+          <p class="documents-note">Os arquivos oficiais serão adicionados após disponibilização e conferência pela APA.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="donation-section" id="doar" aria-labelledby="donation-title">
+      <div class="section-wrap donation-inner">
+        <div class="section-index section-index-light reveal"><span>04</span><span class="index-line"></span><span>Faça parte</span></div>
+        <div class="donation-grid">
+          <div class="donation-copy reveal">
+            <p class="eyebrow">Um gesto, muitas possibilidades</p>
+            <h2 class="section-title" id="donation-title">Ajude a APA<br>a seguir <em>cuidando.</em></h2>
+            <p>Sua contribuição ajuda a APA a continuar cuidando dos animais que precisam de proteção e assistência.</p>
+            <div class="amount-picker" role="group" aria-label="Valores de referência">
+              <button type="button" class="amount-button" data-amount="10" aria-pressed="false">R$ 10</button>
+              <button type="button" class="amount-button" data-amount="25" aria-pressed="false">R$ 25</button>
+              <button type="button" class="amount-button" data-amount="50" aria-pressed="false">R$ 50</button>
+              <button type="button" class="amount-button" data-amount="100" aria-pressed="false">R$ 100</button>
+              <button type="button" class="amount-button amount-other" data-amount="other" aria-pressed="false">Outro valor</button>
+            </div>
+            <p class="amount-hint">Valores de referência. O valor da transferência é definido no aplicativo do seu banco.</p>
+          </div>
+          <div class="pix-panel reveal">
+            <div class="pix-heading"><span class="pix-symbol" aria-hidden="true">PIX</span><span>Contribua pelo Pix</span></div>
+            <div class="qr-shell" id="qr-shell">
+              <div id="pix-qr" aria-label="QR Code Pix da APA de Pompeia"></div>
+              <div class="qr-placeholder" id="qr-placeholder"><span class="qr-cross" aria-hidden="true">+</span><strong>QR Code oficial</strong><small>Disponível após configuração da chave Pix da APA.</small></div>
+            </div>
+            <p class="qr-instruction" id="qr-instruction">Aponte a câmera do celular para o QR Code</p>
+            <div class="pix-divider"><span>ou copie e cole</span></div>
+            <div class="pix-code-row"><code id="pix-code-display">Chave Pix oficial não configurada</code><button class="copy-button" id="copy-pix" type="button" disabled aria-label="Copiar código Pix">Copiar <span aria-hidden="true">▣</span></button></div>
+            <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+            <div class="recipient-check"><span class="check-mark" aria-hidden="true">✓</span><p><strong>APA de Pompeia</strong><br>Confira o nome do destinatário no aplicativo do seu banco antes de confirmar a transferência.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-wrap">
+      <a class="brand footer-brand" href="#inicio" aria-label="APA de Pompeia, voltar ao início"><span class="brand-mark" aria-hidden="true">APA</span><span class="brand-name">APA <span>de Pompeia</span></span></a>
+      <p class="footer-message">Proteção e cuidado animal.<br>Pompeia, São Paulo.</p>
+      <div class="footer-links"><a href="#apa">A APA</a><a href="#animais">Animais</a><a href="#transparencia">Transparência</a><a href="#doar">Doações</a></div>
+      <p class="footer-contact" id="footer-contact">Contato e redes oficiais serão adicionados após confirmação.</p>
+    </div>
+    <div class="footer-bottom section-wrap"><span>APA de Pompeia</span><span>Informações institucionais sujeitas à confirmação pela associação.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </footer>
+
+  <dialog class="animal-dialog" id="animal-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Fechar ficha">×</button>
+    <img id="dialog-image" src="" alt="">
+    <div class="dialog-copy"><span class="eyebrow">Galeria ilustrativa</span><h2 id="dialog-title">Animal</h2><p>As fotos e informações individuais serão publicadas quando os registros oficiais da APA estiverem disponíveis.</p></div>
+  </dialog>
+</body>
+</html>
