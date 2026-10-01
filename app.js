@@ -161,7 +161,7 @@ function setupDocuments() {
     link.href = documentInfo.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.innerHTML = `<span class="document-type"></span><span class="document-title"></span><span class="document-status">Visualizar ↗</span>`;
+    link.innerHTML = `<span class="document-type"></span><span class="document-title"></span><span class="document-status">Visualizar</span>`;
     link.querySelector(".document-type").textContent = documentInfo.type || "Documento";
     link.querySelector(".document-title").textContent = documentInfo.title;
     documentList.append(link);

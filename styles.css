@@ -38,9 +38,7 @@ img { display: block; width: 100%; }
 .site-nav { display: flex; height: 100%; align-items: center; gap: clamp(20px, 3.2vw, 48px); }
 .site-nav > a { font-size: 12px; font-weight: 600; transition: color .2s ease; }
 .site-nav > a:hover { color: var(--forest); }
-.site-nav .nav-donate { display: inline-flex; min-height: 42px; align-items: center; gap: 17px; padding: 0 17px; color: var(--white); background: var(--forest); }
-.nav-donate span { font-size: 16px; }
-.nav-donate span, .button span, .card-arrow, .document-status { font-variant-emoji: text; }
+.site-nav .nav-donate { display: inline-flex; min-height: 42px; align-items: center; padding: 0 17px; color: var(--white); background: var(--forest); }
 .menu-toggle { display: none; }
 
 .hero { position: relative; min-height: min(690px, 76vw); min-height: min(690px, calc(100svh - 76px)); overflow: hidden; color: var(--white); background: #3f5547; }
@@ -58,7 +56,6 @@ h1, h2, h3, p { margin-top: 0; }
 .button:hover { transform: translateY(-2px); }
 .button-light { color: var(--ink); background: var(--lime); }
 .button-light:hover { background: #dfefb6; }
-.button span { font-size: 17px; }
 .photo-note { position: absolute; right: 24px; bottom: 19px; color: rgba(255, 255, 255, .76); font-size: 10px; }
 .scroll-cue { position: absolute; right: 50%; bottom: 0; display: grid; width: 1px; height: 55px; place-items: start center; background: rgba(255, 255, 255, .4); }
 .scroll-cue span { width: 1px; height: 22px; background: var(--white); animation: scroll-line 1.6s ease-in-out infinite; }
@@ -99,8 +96,6 @@ h1, h2, h3, p { margin-top: 0; }
 .animal-image-wrap img { height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
 .animal-card:hover .animal-image-wrap img { transform: scale(1.045); }
 .image-label { position: absolute; bottom: 12px; left: 12px; padding: 6px 9px; color: var(--ink); background: rgba(247, 246, 241, .92); font-size: 9px; font-weight: 700; text-transform: uppercase; }
-.card-arrow { position: absolute; top: 12px; right: 12px; display: grid; width: 32px; height: 32px; place-items: center; color: var(--ink); background: var(--paper); font-size: 17px; transition: color .2s ease, background .2s ease; }
-.animal-card:hover .card-arrow { color: var(--white); background: var(--forest); }
 .animal-caption { display: flex; align-items: center; justify-content: space-between; padding-top: 15px; }
 .animal-caption > span:first-child { display: grid; gap: 5px; }
 .animal-caption strong { font: 700 14px var(--display); }
