@@ -1,10 +1,17 @@
 const APA_CONFIG = {
-  pixCode: "",
-  recipientName: "APA de Pompeia",
+  pixCodes: {
+    other: "00020126580014br.gov.bcb.pix01364804673e-f10e-4161-b252-0ad5975787a75204000053039865802BR5924Lucas Jordao de Oliveira6009Sao Paulo62230519daqr2616435808876366304AFB6",
+    10: "00020126360014br.gov.bcb.pix0114+5514996216551520400005303986540510.005802BR5924Lucas Jordao de Oliveira6009Sao Paulo62230519daqr2616435800062316304783E",
+    25: "00020126580014br.gov.bcb.pix01364804673e-f10e-4161-b252-0ad5975787a7520400005303986540525.005802BR5924Lucas Jordao de Oliveira6009Sao Paulo62230519daqr261643580039984630458EC",
+    50: "00020126580014br.gov.bcb.pix01364804673e-f10e-4161-b252-0ad5975787a7520400005303986540550.005802BR5924Lucas Jordao de Oliveira6009Sao Paulo62230519daqr26164358006637263048D5B",
+    100: "00020126580014br.gov.bcb.pix01364804673e-f10e-4161-b252-0ad5975787a75204000053039865406100.005802BR5924Lucas Jordao de Oliveira6009Sao Paulo62230519daqr26164358009039363043808"
+  },
+  recipientName: "Lucas Jordao de Oliveira",
   documents: [],
   contact: "",
   socialLinks: []
 };
+let selectedPixCode = APA_CONFIG.pixCodes.other;
 
 const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
@@ -73,6 +80,7 @@ document.querySelectorAll(".amount-button").forEach((button) => {
       amountButton.classList.toggle("is-selected", isSelected);
       amountButton.setAttribute("aria-pressed", String(isSelected));
     });
+    updatePix(APA_CONFIG.pixCodes[button.dataset.amount]);
   });
 });
 
@@ -89,7 +97,7 @@ function crc16(payload) {
 }
 
 function hasValidPixCrc(code) {
-  const normalizedCode = code.replace(/\s+/g, "");
+  const normalizedCode = code.trim();
   const checksumPosition = normalizedCode.lastIndexOf("6304");
   if (!normalizedCode.startsWith("000201") || checksumPosition < 0 || checksumPosition + 8 !== normalizedCode.length) return false;
   const payload = normalizedCode.slice(0, checksumPosition + 4);
@@ -97,8 +105,9 @@ function hasValidPixCrc(code) {
   return crc16(payload) === checksum;
 }
 
-function setupPix() {
-  const code = APA_CONFIG.pixCode.trim();
+function updatePix(selectedCode) {
+  selectedPixCode = selectedCode.trim();
+  const code = selectedPixCode;
   const isValid = code.length > 0 && hasValidPixCrc(code);
   const qrPlaceholder = document.querySelector("#qr-placeholder");
   const pixCodeDisplay = document.querySelector("#pix-code-display");
@@ -106,6 +115,10 @@ function setupPix() {
   const qrContainer = document.querySelector("#pix-qr");
   const qrInstruction = document.querySelector("#qr-instruction");
 
+  qrContainer.replaceChildren();
+  qrContainer.style.display = "none";
+  qrPlaceholder.hidden = false;
+  copyButton.disabled = true;
   if (!code) return;
   if (!isValid) {
     qrPlaceholder.querySelector("strong").textContent = "Código Pix não validado";
@@ -123,14 +136,14 @@ function setupPix() {
   if (window.QRCode) {
     qrContainer.style.display = "block";
     qrPlaceholder.hidden = true;
-    new QRCode(qrContainer, { text: code.replace(/\s+/g, ""), width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+    new QRCode(qrContainer, { text: code, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
   }
 }
 
 document.querySelector("#copy-pix").addEventListener("click", async () => {
   const feedback = document.querySelector("#copy-feedback");
   try {
-    await navigator.clipboard.writeText(APA_CONFIG.pixCode.replace(/\s+/g, ""));
+    await navigator.clipboard.writeText(selectedPixCode);
     feedback.textContent = "Código Pix copiado.";
   } catch {
     feedback.textContent = "Não foi possível copiar automaticamente neste navegador.";
@@ -198,7 +211,7 @@ function setupReveals() {
   revealItems.forEach((item) => observer.observe(item));
 }
 
-setupPix();
+updatePix(selectedPixCode);
 setupDocuments();
 setupFooter();
 setupReveals();

@@ -32,7 +32,7 @@ img { display: block; width: 100%; }
 .skip-link:focus { transform: translateY(0); }
 .site-header { position: sticky; z-index: 10; top: 0; display: flex; height: 76px; align-items: center; justify-content: space-between; padding: 0 6.2%; background: var(--paper); border-bottom: 1px solid rgba(32, 37, 33, .08); }
 .brand { display: inline-flex; align-items: center; gap: 11px; }
-.brand-mark { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid var(--forest); border-radius: 50%; color: var(--forest); font: 700 11px var(--display); letter-spacing: 0; }
+.brand-logo { width: 49px; height: 39px; flex: 0 0 auto; object-fit: contain; }
 .brand-name { font: 700 14px var(--display); }
 .brand-name span { font-weight: 500; }
 .site-nav { display: flex; height: 100%; align-items: center; gap: clamp(20px, 3.2vw, 48px); }
@@ -124,7 +124,7 @@ h1, h2, h3, p { margin-top: 0; }
 .section-index-light { color: rgba(255, 255, 255, .62); }
 .section-index-light > span:first-child { color: var(--lime); }
 .section-index-light .index-line { background: rgba(255, 255, 255, .4); }
-.donation-grid { display: grid; grid-template-columns: 1fr .85fr; gap: 10%; align-items: center; margin-top: 41px; }
+.donation-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); gap: 10%; align-items: center; margin-top: 41px; }
 .donation-copy .eyebrow { color: var(--lime); }
 .donation-copy .section-title { margin-bottom: 22px; font-size: clamp(42px, 5vw, 63px); }
 .donation-copy .section-title em { color: var(--lime); }
@@ -133,13 +133,14 @@ h1, h2, h3, p { margin-top: 0; }
 .amount-button { min-height: 39px; padding: 0 13px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 0; color: var(--white); background: transparent; cursor: pointer; font-size: 11px; transition: color .2s ease, background .2s ease, border-color .2s ease; }
 .amount-button:hover, .amount-button.is-selected { border-color: var(--lime); color: var(--forest-deep); background: var(--lime); }
 .amount-hint { margin: 12px 0 0; color: rgba(255, 255, 255, .55); font-size: 10px; line-height: 1.5; }
-.pix-panel { padding: 27px; color: var(--ink); background: var(--paper); }
+.pix-panel { min-width: 0; padding: 27px; color: var(--ink); background: var(--paper); }
 .pix-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 19px; font: 700 13px var(--display); }
 .pix-symbol { display: grid; width: 34px; height: 34px; place-items: center; color: var(--forest); background: #e4eadb; font: 800 11px var(--display); }
 .qr-shell { display: grid; width: 100%; max-width: 240px; aspect-ratio: 1; margin-inline: auto; place-items: center; background: var(--white); }
 #pix-qr { display: none; width: 200px; height: 200px; }
 #pix-qr img, #pix-qr canvas { width: 200px !important; height: 200px !important; }
 .qr-placeholder { display: flex; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 20px; border: 1px dashed #c6c9bf; text-align: center; }
+.qr-placeholder[hidden] { display: none; }
 .qr-cross { display: grid; width: 38px; height: 38px; place-items: center; margin-bottom: 3px; border: 1px solid var(--line); border-radius: 50%; color: var(--forest); font-size: 20px; }
 .qr-placeholder strong { font: 700 12px var(--display); }
 .qr-placeholder small { max-width: 175px; color: var(--muted); font-size: 10px; line-height: 1.5; }
@@ -188,7 +189,7 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 760px) {
   html { scroll-padding-top: 68px; }
   .site-header { height: 68px; padding-inline: 6%; }
-  .brand-mark { width: 35px; height: 35px; }
+  .brand-logo { width: 44px; height: 35px; }
   .brand-name { font-size: 13px; }
   .menu-toggle { display: flex; width: 42px; height: 42px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: transparent; cursor: pointer; }
   .menu-toggle span { width: 16px; height: 1px; background: var(--ink); transition: transform .2s ease; }
@@ -239,7 +240,7 @@ h1, h2, h3, p { margin-top: 0; }
   .document-title { grid-column: 1; grid-row: 2; font-size: 11px; }
   .document-status { grid-column: 2; grid-row: 1 / span 2; }
   .donation-section { padding: 70px 0 75px; }
-  .donation-grid { grid-template-columns: 1fr; gap: 33px; margin-top: 32px; }
+  .donation-grid { grid-template-columns: minmax(0, 1fr); gap: 33px; margin-top: 32px; }
   .donation-copy .section-title { font-size: clamp(45px, 11vw, 58px); }
   .pix-panel { padding: 21px 17px; }
   .qr-shell { max-width: 220px; }
