@@ -40,6 +40,7 @@ img { display: block; width: 100%; }
 .site-nav > a:hover { color: var(--forest); }
 .site-nav .nav-donate { display: inline-flex; min-height: 42px; align-items: center; gap: 17px; padding: 0 17px; color: var(--white); background: var(--forest); }
 .nav-donate span { font-size: 16px; }
+.nav-donate span, .button span, .card-arrow, .document-status { font-variant-emoji: text; }
 .menu-toggle { display: none; }
 
 .hero { position: relative; min-height: min(690px, 76vw); min-height: min(690px, calc(100svh - 76px)); overflow: hidden; color: var(--white); background: #3f5547; }
